@@ -20,8 +20,12 @@
     "center",
     "point"
   ],
-  "author": "Sagi Kedmi",
-  "license": "ISC",
+  "author": "Sagi Kedmi <sagi@rumors.io>",
+  "bugs": {
+    "url": "https://github.com/rmrs/random-location/issues"
+  },
+  "homepage": "https://github.com/rmrs/random-location",
+  "license": "MIT",
   "devDependencies": {
     "babel-jest": "^20.0.3",
     "babel-preset-env": "^1.6.0",

@@ -1,5 +1,3 @@
-// Based on: http://www.movable-type.co.uk/scripts/latlong.html#destPoint
-
 const EARTH_RADIUS = 6371000 // meters
 const DEG_TO_RAD = Math.PI / 180.0
 const THREE_PI = Math.PI * 3
@@ -16,6 +14,8 @@ centerPoint C is of type { latitude: A, longitude: B }
 Where -90 <= A <= 90 and -180 <= B <= 180.
 
 radius R is in meters.
+
+Based on: http://www.movable-type.co.uk/scripts/latlong.html#destPoint
 */
 export const randomCircumferencePoint = (centerPoint, radius) => {
   const sinLat = Math.sin(toRadians(centerPoint.latitude))
