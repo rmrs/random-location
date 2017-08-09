@@ -1,0 +1,19 @@
+{
+  "name": "random-location",
+  "version": "0.0.1",
+  "description": "Random coordinates within specific radius given a central point",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random",
+    "location",
+    "coordinates",
+    "radius",
+    "central",
+    "point"
+  ],
+  "author": "Sagi Kedmi",
+  "license": "ISC"
+}
