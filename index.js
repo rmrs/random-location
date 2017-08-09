@@ -14,8 +14,10 @@ circumference defined by C and R.
 
 centerPoint C is of type { latitude: A, longitude: B }
 Where -90 <= A <= 90 and -180 <= B <= 180.
+
+radius R is in meters.
 */
-const randomCircumferencePoint = (centerPoint, radius) => {
+export const randomCircumferencePoint = (centerPoint, radius) => {
   const sinLat = Math.sin(toRadians(centerPoint.latitude))
   const cosLat = Math.cos(toRadians(centerPoint.latitude))
 
@@ -51,7 +53,42 @@ the circle defined by C and R.
 
 centerPoint C is of type { latitude: A, longitude: B }
 Where -90 <= A <= 90 and -180 <= B <= 180.
+
+radius R is in meters.
 */
-const randomCirclePoint = (centerPoint, radius) => {
+export const randomCirclePoint = (centerPoint, radius) => {
   return randomCircumferencePoint(centerPoint, Math.random() * radius)
+}
+
+/*
+Returns the distance in meters between two points P1 and P2. 
+
+P1 and P2 are of type { latitude: A, longitude: B }
+Where -90 <= A <= 90 and -180 <= B <= 180.
+
+Basically it is the Haversine distance function.
+Based on: http://www.movable-type.co.uk/scripts/latlong.html
+*/
+export const distance = (P1, P2) => {
+  const rP1 = {
+    latitude: toRadians(P1.latitude),
+    longitude: toRadians(P1.longitude),
+  }
+  const rP2 = {
+    latitude: toRadians(P2.latitude),
+    longitude: toRadians(P2.longitude),
+  }
+
+  const D = {
+    latitude: Math.sin((rP2.latitude - rP1.latitude) / 2),
+    longitude: Math.sin((rP2.longitude - rP1.longitude) / 2),
+  }
+
+  const A =
+    D.latitude * D.latitude +
+    D.longitude * D.longitude * Math.cos(rP1.latitude) * Math.cos(rP2.latitude)
+
+  const C = 2 * Math.atan2(Math.sqrt(A), Math.sqrt(1 - A))
+
+  return EARTH_RADIUS * C
 }

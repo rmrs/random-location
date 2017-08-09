@@ -1,10 +1,15 @@
 {
   "name": "random-location",
   "version": "0.0.1",
-  "description": "Random coordinates within specific radius given a central point",
+  "description": "Random coordinates within specific radius given a center point",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "keywords": [
     "random",
@@ -12,8 +17,14 @@
     "coordinates",
     "radius",
     "central",
+    "center",
     "point"
   ],
   "author": "Sagi Kedmi",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^20.0.4"
+  }
 }
