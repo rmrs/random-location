@@ -17,7 +17,7 @@ radius R is in meters.
 
 Based on: http://www.movable-type.co.uk/scripts/latlong.html#destPoint
 */
-export const randomCircumferencePoint = (centerPoint, radius) => {
+const randomCircumferencePoint = (centerPoint, radius) => {
   const sinLat = Math.sin(toRadians(centerPoint.latitude))
   const cosLat = Math.cos(toRadians(centerPoint.latitude))
 
@@ -56,7 +56,7 @@ Where -90 <= A <= 90 and -180 <= B <= 180.
 
 radius R is in meters.
 */
-export const randomCirclePoint = (centerPoint, radius) => {
+const randomCirclePoint = (centerPoint, radius) => {
   return randomCircumferencePoint(centerPoint, Math.random() * radius)
 }
 
@@ -69,7 +69,7 @@ Where -90 <= A <= 90 and -180 <= B <= 180.
 Basically it is the Haversine distance function.
 Based on: http://www.movable-type.co.uk/scripts/latlong.html
 */
-export const distance = (P1, P2) => {
+const distance = (P1, P2) => {
   const rP1 = {
     latitude: toRadians(P1.latitude),
     longitude: toRadians(P1.longitude),
@@ -92,3 +92,5 @@ export const distance = (P1, P2) => {
 
   return EARTH_RADIUS * C
 }
+
+module.exports = { distance, randomCircumferencePoint, randomCirclePoint }
