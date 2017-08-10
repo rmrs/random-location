@@ -1,6 +1,6 @@
 {
   "name": "random-location",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Random coordinates within specific radius given a center point",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "prebuild": "rimraf dist",
     "build": "npm-run-all --parallel build:*",
     "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
-    "build:umd": "webpack --output-filename index.umd.js",
-    "build:umd.min": "webpack --output-filename index.umd.min.js -p",
+    "build:umd": "webpack --output-filename randomLocation.umd.js",
+    "build:umd.min": "webpack --output-filename randomLocation.umd.min.js -p",
     "validate": "npm run cover && npm run check-coverage",
     "setup": "npm install && npm run validate"
   },
