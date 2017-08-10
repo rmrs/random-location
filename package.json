@@ -1,15 +1,14 @@
 {
   "name": "random-location",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Random coordinates within specific radius given a center point",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "mocha src/index.test.js --compilers js:babel-register"
   },
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rmrs/random-location.git"
   },
   "keywords": [
     "random",
@@ -27,8 +26,18 @@
   "homepage": "https://github.com/rmrs/random-location",
   "license": "MIT",
   "devDependencies": {
-    "babel-jest": "^20.0.3",
-    "babel-preset-env": "^1.6.0",
-    "jest": "^20.0.4"
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^4.1.1",
+    "codecov": "^2.3.0",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
   }
 }
