@@ -1,6 +1,6 @@
 {
   "name": "random-location",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Random coordinates within a circle given a center point and radius",
   "main": "src/index.js",
   "scripts": {

@@ -18,8 +18,7 @@ Using [npm](https://www.npmjs.com/):
 $ npm install --save random-location
 ~~~
 
-Then with a module bundler like [webpack](https://webpack.github.io/), use as
-you would anything else:
+Thenuse as you would anything else:
 
 ```js
 // Using ES6 modules
@@ -34,3 +33,26 @@ The UMD build is also available on [unpkg](https://unpkg.com):
 ```html
 <script src="https://unpkg.com/random-location/dist/randomLocation.umd.min.js"></script>
 ```
+
+## Usage
+
+### Generating random coordinates within a circle
+Lets say we'd like to get a random location that its distance from
+[Twitter's HQ](https://www.google.co.il/maps/place/Twitter+HQ/@37.7768006,-122.4187928,17z/data=!3m1!4b1!4m5!3m4!1s0x8085809c6c8f4459:0xb10ed6d9b5050fa5!8m2!3d37.7767964!4d-122.4166041?hl=en)
+is at most `500` meters:
+
+```js
+// Twitter HQ
+const P = {
+  latitude: 37.7768006,
+  longitude: -122.4187928
+}
+
+const R = 500 // meters
+
+const randomPoint = randomLocation.randomCirclePoint(P, R)
+```
+
+### Generating random coordinates on a circle circumference
+### Measure the distance between two points
+
