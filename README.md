@@ -39,7 +39,7 @@ The UMD build is also available on [unpkg](https://unpkg.com):
 ### Generating random coordinates within a circle
 Lets say we'd like to get a random location that its distance from
 [Twitter's HQ](https://www.google.co.il/maps/place/Twitter+HQ/@37.7768006,-122.4187928,17z/data=!3m1!4b1!4m5!3m4!1s0x8085809c6c8f4459:0xb10ed6d9b5050fa5!8m2!3d37.7767964!4d-122.4166041?hl=en)
-is at most `500` meters:
+is **at most** `500` meters:
 
 ```js
 // Twitter HQ
@@ -54,5 +54,38 @@ const randomPoint = randomLocation.randomCirclePoint(P, R)
 ```
 
 ### Generating random coordinates on a circle circumference
+Lets say we'd like to get a random location that its distance from
+[Twitter's HQ](https://www.google.co.il/maps/place/Twitter+HQ/@37.7768006,-122.4187928,17z/data=!3m1!4b1!4m5!3m4!1s0x8085809c6c8f4459:0xb10ed6d9b5050fa5!8m2!3d37.7767964!4d-122.4166041?hl=en)
+is **exactly** `700` meters:
+
+```js
+// Twitter HQ
+const P = {
+  latitude: 37.7768006,
+  longitude: -122.4187928
+}
+
+const R = 700 // meters
+
+const randomPoint = randomLocation.randomCircumferencePoint(P, R)
+```
+
 ### Measure the distance between two points
+```js
+// Eiffel Tower
+const P1 = {
+  latitude: 48.8583736,
+  longitude: 2.2922926,
+}
+
+// Notre-Dame Cathedral
+const P2 = {
+  latitude: 48.8529717,
+  longitude: 2.3477134,
+}
+
+// Prints True
+console.log(Math.floor(randomLocation.distance(P1, P2)) === 4098)
+ 
+```
 
