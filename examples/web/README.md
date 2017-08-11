@@ -3,6 +3,8 @@
 Using both the `randomCirclePoint` and `randomCircumferencePoint`
 functions to create a Smiley above Twitter's HQ:
 
+![](https://github.com/rmrs/random-location/raw/master/examples/web/example.png)
+
 ## Make example work
 To make the example work you'll have to:
 
