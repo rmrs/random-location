@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Random coordinates - within a circle, on a circumference</title></head>
+  <body>
+    <script src="https://unpkg.com/random-location@1.0.3/dist/randomLocation.umd.min.js"></script>
+    <h3>Random coordinates - within a circle, on a circumference</h3>
+    <div style="height: 400px; width: 400px" id="map"></div>
+    <script>
+      // Twitter HQ
+      const P = {
+        latitude: 37.7768006,
+        longitude: -122.4187928
+      }
+
+      const E1 = {
+        latitude: P.latitude,
+        longitude: P.longitude - 0.005
+      }
+      const E2 = {
+        latitude: P.latitude,
+        longitude: P.longitude + 0.005
+      }
+      const N = {
+        latitude: P.latitude - 0.005,
+        longitude: P.longitude 
+      }
+      const C = {
+        latitude: P.latitude - 0.001,
+        longitude: P.longitude 
+      }
+
+      function initMap() {
+        let map = new google.maps.Map(document.getElementById('map'), {
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scaleControl: false 
+        });
+        let bounds = new google.maps.LatLngBounds();
+
+        function getCustomMarker(color) {
+          return {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: color,
+            strokeColor: color,
+          }
+        }
+
+        function randomCirclePoints(centerPoint, radius, customMarker) {
+          for (i=0;i<1000;i++) {
+            const R = randomLocation.randomCirclePoint(centerPoint, radius)
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(R.latitude, R.longitude),
+              icon: customMarker,
+              map: map
+            });
+            bounds.extend(marker.position);
+          }
+        }
+
+        function randomCircumferencePoints(centerPoint, radius, customMarker) {
+          for (i=0;i<1000;i++) {
+            const R = randomLocation.randomCircumferencePoint(centerPoint, radius)
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(R.latitude, R.longitude),
+              icon: customMarker,
+              map: map
+            });
+            bounds.extend(marker.position);
+          }
+        }
+
+        randomCirclePoints(E1, 150, getCustomMarker('blue'))
+        randomCirclePoints(E2, 150, getCustomMarker('green'))
+        randomCircumferencePoints(N, 300, getCustomMarker('red'))
+        randomCircumferencePoints(C, 900, getCustomMarker('orange'))
+
+        map.fitBounds(bounds);
+      }
+    </script>
+    <!--
+      Get a Google Maps API Key from: https://developers.google.com/maps/documentation/javascript/get-api-key
+      and substitude "<GOOGLE_MAPS_API_KEY>" below with it.
+    -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<GOOGLE_MAPS_API_KEY>&callback=initMap"></script>
+  </body>
+</html>
