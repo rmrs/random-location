@@ -1,8 +1,9 @@
 # random-location
 
 [`random-location`](https://www.npmjs.com/package/random-location) gets you
-random coordinates within a circle given a center point and radius. It works
-anywhere JavaScript runs.
+random coordinates within a circle (or on a circumference) given a center point and radius.
+We use it to stress test our [geohash](https://en.wikipedia.org/wiki/Geohash) based services.
+It works anywhere JavaScript runs.
 
 [![travis build](https://img.shields.io/travis/rmrs/random-location.svg?style=flat-square)](https://travis-ci.org/rmrs/random-location)
 [![codecov coverage](https://img.shields.io/codecov/c/github/rmrs/random-location.svg?style=flat-square)](https://codecov.io/github/rmrs/random-location)
@@ -51,6 +52,8 @@ const P = {
 const R = 500 // meters
 
 const randomPoint = randomLocation.randomCirclePoint(P, R)
+
+// randomPoint => { latitude: 37.77636619, longitude: -122.416575663 }
 ```
 
 ### Generating random coordinates on a circle circumference
@@ -68,6 +71,8 @@ const P = {
 const R = 700 // meters
 
 const randomPoint = randomLocation.randomCircumferencePoint(P, R)
+
+// randomPoint => { latitude: 37.7828897, longitude: -122.4167713 }
 ```
 
 ### Measure the distance between two points
