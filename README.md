@@ -12,6 +12,8 @@ It works anywhere JavaScript runs.
 
 ![](https://github.com/rmrs/random-location/raw/master/examples/web/example.png)
 
+[`web example`](https://github.com/rmrs/random-location/tree/master/examples/web)
+
 ## Installation
 
 Using [npm](https://www.npmjs.com/):
