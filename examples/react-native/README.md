@@ -3,7 +3,7 @@
 Using both the `randomCirclePoint` and `randomCircumferencePoint`
 functions to create a Smiley above Twitter's HQ:
 
-![](https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png | width=200)
+<img alt="React-Native Example" width=200px src="https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png">
 
 ## Make example work
 
