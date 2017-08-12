@@ -5,6 +5,8 @@ functions to create a Smiley above Twitter's HQ:
 
 <img alt="React-Native Example" width=300px src="https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png">
 
+Currently the example is only for **Android**. Nevertheless, if you need an **iOS** version of it just open an issue and I'll make one for you.
+
 ## Make example work
 
 To make the example work you'll have to:
@@ -14,8 +16,9 @@ To make the example work you'll have to:
 
 Then simply:
 
-~~~
+```bash
+$ cd random_location
 $ npm install
 $ react-native run-android
 $ npm start
-~~~
+```
