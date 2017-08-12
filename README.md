@@ -10,9 +10,10 @@ It works anywhere JavaScript runs.
 [![version](https://img.shields.io/npm/v/random-location.svg?style=flat-square)](http://npm.im/random-location)
 [![MIT License](https://img.shields.io/npm/l/random-location.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
-![](https://github.com/rmrs/random-location/raw/master/examples/web/example.png)
+![](https://github.com/rmrs/random-location/raw/master/examples/web/example.png) ![](https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png)
 
-[`web example`](https://github.com/rmrs/random-location/tree/master/examples/web)
+[`web example`](https://github.com/rmrs/random-location/tree/master/examples/web) | 
+[`react-native example`](https://github.com/rmrs/random-location/tree/master/examples/react-native) 
 
 ## Installation
 
@@ -21,7 +22,7 @@ Using [npm](https://www.npmjs.com/):
 $ npm install --save random-location
 ~~~
 
-Thenuse as you would anything else:
+Then use as you would anything else:
 
 ```js
 // Using ES6 modules
