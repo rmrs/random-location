@@ -13,7 +13,7 @@ It works anywhere JavaScript runs.
 ![](https://github.com/rmrs/random-location/raw/master/examples/web/example.png) ![](https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png)
 
 [`web example`](https://github.com/rmrs/random-location/tree/master/examples/web) | 
-[`react-native example`](https://github.com/rmrs/random-location/tree/master/examples/react-native) 
+<img alt="React-Native Example" width=300px src="https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png">
 
 ## Installation
 
