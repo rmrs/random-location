@@ -3,16 +3,14 @@
 Using both the `randomCirclePoint` and `randomCircumferencePoint`
 functions to create a Smiley above Twitter's HQ:
 
-![](https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png)
-
-
+![](https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png | width=200)
 
 ## Make example work
 
 To make the example work you'll have to:
 
 1. Get a Google Maps API Key from:  https://developers.google.com/maps/documentation/android-api/signup
-2. Substitude "`<GOOGLE_MAPS_API_KEY>`" in [AndroidManifest.xml](./react-native/android/app/src/main/AndroidManifest.xml) with it.
+2. Substitude "`<GOOGLE_MAPS_API_KEY>`" in [AndroidManifest.xml](./random_location/android/app/src/main/AndroidManifest.xml) with it.
 
 Then simply:
 
