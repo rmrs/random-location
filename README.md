@@ -10,7 +10,7 @@ It works anywhere JavaScript runs.
 [![version](https://img.shields.io/npm/v/random-location.svg?style=flat-square)](http://npm.im/random-location)
 [![MIT License](https://img.shields.io/npm/l/random-location.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
-![](https://github.com/rmrs/random-location/raw/master/examples/web/example.png) <img alt="React-Native Example" width=300px src="https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png">
+<img alt="Web Example" width=532px src="https://github.com/rmrs/random-location/raw/master/examples/web/example.png"> <img alt="React-Native Example" width=300px src="https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png">
 
 [`web example`](https://github.com/rmrs/random-location/tree/master/examples/web) | 
 [`react-native example`](https://github.com/rmrs/random-location/tree/master/examples/react-native) | 
