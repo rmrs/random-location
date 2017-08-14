@@ -57,7 +57,11 @@ Where -90 <= A <= 90 and -180 <= B <= 180.
 radius R is in meters.
 */
 const randomCirclePoint = (centerPoint, radius) => {
-  return randomCircumferencePoint(centerPoint, Math.random() * radius)
+  // http://mathworld.wolfram.com/DiskPointPicking.html
+  return randomCircumferencePoint(
+    centerPoint,
+    Math.sqrt(Math.random()) * radius
+  )
 }
 
 /*
