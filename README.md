@@ -1,14 +1,17 @@
-# random-location
-
+<h1 align="center">random-location</h1>
+<p align="center">
 [`random-location`](https://www.npmjs.com/package/random-location) gets you
 random coordinates within a circle (or on a circumference) given a center point and radius.
 We use it to stress test our [geohash](https://en.wikipedia.org/wiki/Geohash) based services.
 It works anywhere JavaScript runs.
+</p>
 
+<p align="center">
 [![travis build](https://img.shields.io/travis/rmrs/random-location.svg?style=flat-square)](https://travis-ci.org/rmrs/random-location)
 [![codecov coverage](https://img.shields.io/codecov/c/github/rmrs/random-location.svg?style=flat-square)](https://codecov.io/github/rmrs/random-location)
 [![version](https://img.shields.io/npm/v/random-location.svg?style=flat-square)](http://npm.im/random-location)
 [![MIT License](https://img.shields.io/npm/l/random-location.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+</p>
 
 <img alt="Web Example" width=533px src="https://github.com/rmrs/random-location/raw/master/examples/web/example.png"> <img alt="React-Native Example" width=300px src="https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png">
 
