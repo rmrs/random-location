@@ -97,4 +97,11 @@ const distance = (P1, P2) => {
   return EARTH_RADIUS * C
 }
 
-module.exports = { distance, randomCircumferencePoint, randomCirclePoint }
+const haversine = distance
+
+module.exports = {
+  distance,
+  haversine,
+  randomCircumferencePoint,
+  randomCirclePoint,
+}
