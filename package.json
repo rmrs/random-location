@@ -53,10 +53,6 @@
     "rimraf": "2.6.1",
     "webpack": "3.5.2"
   },
-  "engines": {
-    "node": "6.x",
-    "npm": "3.x"
-  },
   "babel": {
     "presets": [
       "latest"
