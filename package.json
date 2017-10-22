@@ -1,8 +1,8 @@
 {
   "name": "random-location",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Random coordinates within a circle given a center point and radius",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha src/index.test.js --compilers js:babel-register",
     "start": "npm run test",
