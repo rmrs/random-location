@@ -30,9 +30,11 @@
     "center",
     "point"
   ],
-  "file": [
-    "dist",
-    "README.md"
+  "files": [
+    "dist/",
+    "LICENSE",
+    "README.md",
+    "package.json"
   ],
   "author": "Sagi Kedmi <sagi@rumors.io>",
   "license": "MIT",
@@ -52,10 +54,5 @@
     "nyc": "11.1.0",
     "rimraf": "2.6.1",
     "webpack": "3.5.2"
-  },
-  "babel": {
-    "presets": [
-      "latest"
-    ]
   }
 }
