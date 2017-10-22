@@ -97,3 +97,17 @@ console.log(Math.floor(randomLocation.distance(P1, P2)) === 4098)
  
 ```
 
+## Hacking 
+
+### Developing
+Verify tests and coverage:
+~~~
+$ npm run test
+$ npm run cover 
+~~~
+
+### Publishing
+~~~
+$ npm run build
+$ npm publish
+~~~
