@@ -17,12 +17,12 @@ radius R is in meters.
 
 Based on: http://www.movable-type.co.uk/scripts/latlong.html#destPoint
 */
-const randomCircumferencePoint = (centerPoint, radius) => {
+const randomCircumferencePoint = (centerPoint, radius, randomFn = Math.random) => {
   const sinLat = Math.sin(toRadians(centerPoint.latitude))
   const cosLat = Math.cos(toRadians(centerPoint.latitude))
 
   // Random bearing (direction out 360 degrees)
-  const bearing = Math.random() * TWO_PI
+  const bearing = randomFn() * TWO_PI
   const sinBearing = Math.sin(bearing)
   const cosBearing = Math.cos(bearing)
 
@@ -56,16 +56,17 @@ Where -90 <= A <= 90 and -180 <= B <= 180.
 
 radius R is in meters.
 */
-const randomCirclePoint = (centerPoint, radius) => {
+const randomCirclePoint = (centerPoint, radius, randomFn = Math.random) => {
   // http://mathworld.wolfram.com/DiskPointPicking.html
   return randomCircumferencePoint(
     centerPoint,
-    Math.sqrt(Math.random()) * radius
+    Math.sqrt(randomFn()) * radius,
+    randomFn
   )
 }
 
 /*
-Returns the distance in meters between two points P1 and P2. 
+Returns the distance in meters between two points P1 and P2.
 
 P1 and P2 are of type { latitude: A, longitude: B }
 Where -90 <= A <= 90 and -180 <= B <= 180.
