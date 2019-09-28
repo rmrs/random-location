@@ -53,6 +53,7 @@
     "npm-run-all": "4.0.2",
     "nyc": "11.1.0",
     "rimraf": "2.6.1",
+    "seedrandom": "^3.0.5",
     "webpack": "3.5.2"
   }
 }
