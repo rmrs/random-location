@@ -1,5 +1,6 @@
 *
 !/dist/index.js
+!/dist/randomLocation.umd.js
 !package.json
 !README.md
 !LICENSE

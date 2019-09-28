@@ -12,7 +12,7 @@ It works anywhere JavaScript runs.
 
 <img alt="Web Example" width=533px src="https://github.com/rmrs/random-location/raw/master/examples/web/example.png"> <img alt="React-Native Example" width=300px src="https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png">
 
-[`web example`](https://github.com/rmrs/random-location/tree/master/examples/web) | 
+[`web example`](https://github.com/rmrs/random-location/tree/master/examples/web) |
 [`react-native example`](https://github.com/rmrs/random-location/tree/master/examples/react-native)
 
 ## Installation
@@ -94,16 +94,16 @@ const P2 = {
 
 // Prints True
 console.log(Math.floor(randomLocation.distance(P1, P2)) === 4098)
- 
+
 ```
 
-## Hacking 
+## Hacking
 
 ### Developing
 Verify tests and coverage:
 ~~~
 $ npm run test
-$ npm run cover 
+$ npm run cover
 ~~~
 
 ### Publishing
