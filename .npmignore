@@ -1,8 +1,5 @@
-node_modules
-coverage
-.nyc_output
-npm-debug.log
-examples
-.babelrc
-webpack.config.babel.js
-.travis.yml
+*
+!/dist/index.js
+!package.json
+!README.md
+!LICENSE

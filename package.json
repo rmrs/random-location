@@ -4,16 +4,11 @@
   "description": "Random coordinates within a circle given a center point and radius",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha src/index.test.js --compilers js:babel-register",
-    "start": "npm run test",
-    "cover": "nyc --reporter=lcov npm test",
-    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "test": "jest",
     "prebuild": "rimraf dist",
     "build": "npm-run-all --parallel build:*",
-    "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
-    "build:umd": "webpack --output-filename randomLocation.umd.js",
-    "build:umd.min": "webpack --output-filename randomLocation.umd.min.js -p",
+    "build:babel": "babel --ignore '**/*.test.js' src -d dist --verbose",
+    "build:webpack": "webpack --display-modules ./src -o dist/randomLocation.umd.js",
     "validate": "npm run cover && npm run check-coverage",
     "setup": "npm install && npm run validate"
   },
@@ -33,19 +28,17 @@
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
-    "chai": "4.2.0",
-    "codecov": "3.6.1",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jest": "^24.9.0",
-    "mocha": "6.2.0",
     "npm-run-all": "4.1.5",
     "nyc": "14.1.1",
     "prettier": "^1.18.2",
     "rimraf": "3.0.0",
     "seedrandom": "^3.0.5",
-    "webpack": "4.41.0"
+    "webpack": "4.41.0",
+    "webpack-cli": "^3.3.9"
   }
 }
