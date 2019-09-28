@@ -139,3 +139,7 @@ console.log(Math.floor(randomLocation.distance(P1, P2)) === 4098)
 ## Hacking
 
 Clone. Install. Hack. Open a **PR**.
+
+## License
+
+MIT.
