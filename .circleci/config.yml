@@ -1,11 +1,11 @@
-version:2
-
 defaults: &defaults
   working_directory: ~/repo
   docker:
    - image: circleci/node:latest
      environment:
        TZ: "Asia/Jerusalem"
+
+version:2
 
 jobs:
   release:
