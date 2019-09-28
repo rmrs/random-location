@@ -43,6 +43,10 @@ jobs:
       - run:
           name: test & coveralls
           command: yarn test --coverageReporters=text-lcov | yarn coveralls
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - *
 
 workflows:
   version: 2
