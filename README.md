@@ -37,8 +37,43 @@ var randomLocation = require('random-location')
 The UMD build is also available on [unpkg](https://unpkg.com):
 
 ```html
-<script src="https://unpkg.com/random-location/dist/randomLocation.umd.min.js"></script>
+<script src="https://unpkg.com/random-location/dist/randomLocation.umd.js"></script>
 ```
+
+## API
+
+### `randomLocation.randomCirclePoint(...)`
+
+Outputs a Point ( `{ latitude: ..., longitude: ... }`) of random coordinates within a circle.
+
+Function definition:
+
+```js
+const randomCirclePoint = (centerPoint, radius, randomFn = Math.random) => { ... }
+```
+
+Where:
+
+- **`centerPoint`** *required* An object with a `latitude` and `longitude` fields.
+- **`radius`** *required* The maximum distance (meters) from `centerPoint`.
+- **`randomFn`** *optional* A random function. Output is >=0 and <=1. Allows usage of seeded random number generators (see [`seedrandom`](https://www.npmjs.com/package/seedrandom)) - more predictability when testing.
+
+### `randomLocation.randomCircumferencePoint(...)`
+
+Outputs a Point ( `{ latitude: ..., longitude: ... }`) of random coordinates within a circle.
+
+Function definition:
+
+```js
+const randomCircumferencePoint= (centerPoint, radius, randomFn = Math.random) => { ... }
+```
+
+Where:
+
+- **`centerPoint`** *required* An object with a `latitude` and `longitude` fields.
+- **`radius`** *required* The distance (meters) from `centerPoint`.
+- **`randomFn`** *optional* A random function. Output is >=0 and <=1. Allows usage of seeded random number generators (see [`seedrandom`](https://www.npmjs.com/package/seedrandom)) - more predictability when testing.
+
 
 ## Usage
 
