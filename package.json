@@ -1,59 +1,54 @@
 {
   "name": "random-location",
-  "version": "1.0.12",
-  "description": "Random coordinates within a circle given a center point and radius",
+  "version": "0.0.0-development",
+  "description": "Random coordinates within a circle (or on a circumference) given a center point and radius.",
+  "author": "Sagi Kedmi (https://sagi.io) <git@sagi.io>",
+  "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha src/index.test.js --compilers js:babel-register",
-    "start": "npm run test",
-    "cover": "nyc --reporter=lcov npm test",
-    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "test": "jest",
     "prebuild": "rimraf dist",
+    "lint": "eslint ./src",
     "build": "npm-run-all --parallel build:*",
-    "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
-    "build:umd": "webpack --output-filename randomLocation.umd.js",
-    "build:umd.min": "webpack --output-filename randomLocation.umd.min.js -p",
-    "validate": "npm run cover && npm run check-coverage",
-    "setup": "npm install && npm run validate"
+    "build:babel": "babel --ignore '**/*.test.js' src -d dist --verbose",
+    "build:webpack": "webpack --display-modules ./src -o dist/randomLocation.umd.js",
+    "prettier:ci": "prettier --list-different \"src/**/*.js\"",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "babel-eslint": "^10.0.3",
+    "coveralls": "^3.0.6",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.7",
+    "jest": "^24.9.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "^1.18.2",
+    "rimraf": "3.0.0",
+    "seedrandom": "^3.0.5",
+    "semantic-release": "^15.13.24",
+    "webpack": "4.41.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/rmrs/random-location.git"
   },
-  "keywords": [
-    "random",
-    "location",
-    "coordinates",
-    "radius",
-    "central",
-    "center",
-    "point"
-  ],
-  "files": [
-    "dist/",
-    "LICENSE",
-    "README.md",
-    "package.json"
-  ],
-  "author": "Sagi Kedmi <sagi@rumors.io>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rmrs/random-location/issues"
   },
   "homepage": "https://github.com/rmrs/random-location",
-  "devDependencies": {
-    "babel-cli": "6.24.1",
-    "babel-loader": "7.1.1",
-    "babel-preset-latest": "6.24.1",
-    "babel-register": "6.24.1",
-    "chai": "4.1.1",
-    "codecov": "2.3.0",
-    "mocha": "3.5.0",
-    "npm-run-all": "4.0.2",
-    "nyc": "11.1.0",
-    "rimraf": "2.6.1",
-    "seedrandom": "^3.0.5",
-    "webpack": "3.5.2"
-  }
+  "keywords": ["random", "location", "coordinates", "radius", "central", "center", "point"]
 }

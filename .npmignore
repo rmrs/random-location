@@ -1,8 +1,6 @@
-node_modules
-coverage
-.nyc_output
-npm-debug.log
-examples
-.babelrc
-webpack.config.babel.js
-.travis.yml
+*
+!/dist/index.js
+!/dist/randomLocation.umd.js
+!package.json
+!README.md
+!LICENSE
