@@ -5,9 +5,9 @@ random coordinates within a circle (or on a circumference) given a center point 
 We use it to stress test our [geohash](https://en.wikipedia.org/wiki/Geohash) based services.
 It works anywhere JavaScript runs.
 
-[![travis build](https://img.shields.io/travis/rmrs/random-location.svg?style=flat-square)](https://travis-ci.org/rmrs/random-location)
-[![codecov coverage](https://img.shields.io/codecov/c/github/rmrs/random-location.svg?style=flat-square)](https://codecov.io/github/rmrs/random-location)
-[![version](https://img.shields.io/npm/v/random-location.svg?style=flat-square)](http://npm.im/random-location)
+[![Build](https://circleci.com/gh/rmrs/random-location.svg?style=svg)](https://circleci.com/gh/rmrs/random-location)
+[![Coverage](https://coveralls.io/repos/github/rmrs/random-location/badge.svg?branch=modernize_js_repo)](https://coveralls.io/github/rmrs/random-location?branch=modernize_js_repo)
+[![Version](https://img.shields.io/npm/v/random-location.svg?style=flat-square)](http://npm.im/random-location)
 [![MIT License](https://img.shields.io/npm/l/random-location.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 <img alt="Web Example" width=533px src="https://github.com/rmrs/random-location/raw/master/examples/web/example.png"> <img alt="React-Native Example" width=300px src="https://github.com/rmrs/random-location/raw/master/examples/react-native/example.png">
