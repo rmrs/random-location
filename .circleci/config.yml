@@ -21,14 +21,11 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run:
-          name: test
-          command: yarn test
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
-      - run:
           name: eslint
           command: yarn lint
       - run:
           name: prettier
           command: yarn prettier:ci
+      - run:
+          name: test & coveralls
+          command: yarn test --coverageReporters=text-lcov | yarn coveralls

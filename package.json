@@ -1,7 +1,7 @@
 {
   "name": "random-location",
   "version": "1.0.12",
-  "description": "Random coordinates within a circle given a center point and radius",
+  "description": "Random coordinates within a circle (or on a circumference) given a center point and radius.",
   "author": "Sagi Kedmi (https://sagi.io) <git@sagi.io>",
   "license": "MIT",
   "main": "dist/index.js",
