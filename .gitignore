@@ -3,3 +3,4 @@ coverage
 dist
 .nyc_output
 npm-debug.log
+*.swp
