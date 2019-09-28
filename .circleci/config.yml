@@ -1,6 +1,6 @@
 version:2
 
-defaults:
+defaults: &defaults
  working_directory: ~/repo
  docker:
    - image: circleci/node:latest
