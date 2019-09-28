@@ -31,7 +31,7 @@ Then use as you would anything else:
 import randomLocation from 'random-location'
 
 // Using CommonJS modules
-var randomLocation = require('random-location')
+const randomLocation = require('random-location')
 ```
 
 The UMD build is also available on [unpkg](https://unpkg.com):
