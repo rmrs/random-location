@@ -1,6 +1,6 @@
 {
   "name": "random-location",
-  "version": "1.0.12",
+  "version": "0.0.0-development",
   "description": "Random coordinates within a circle (or on a circumference) given a center point and radius.",
   "author": "Sagi Kedmi (https://sagi.io) <git@sagi.io>",
   "license": "MIT",
@@ -12,7 +12,8 @@
     "build": "npm-run-all --parallel build:*",
     "build:babel": "babel --ignore '**/*.test.js' src -d dist --verbose",
     "build:webpack": "webpack --display-modules ./src -o dist/randomLocation.umd.js",
-    "prettier:ci": "prettier --list-different \"src/**/*.js\""
+    "prettier:ci": "prettier --list-different \"src/**/*.js\"",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
@@ -29,6 +30,7 @@
     "prettier": "^1.18.2",
     "rimraf": "3.0.0",
     "seedrandom": "^3.0.5",
+    "semantic-release": "^15.13.24",
     "webpack": "4.41.0",
     "webpack-cli": "^3.3.9"
   },
@@ -40,5 +42,13 @@
     "url": "https://github.com/rmrs/random-location/issues"
   },
   "homepage": "https://github.com/rmrs/random-location",
-  "keywords": ["random", "location", "coordinates", "radius", "central", "center", "point"]
+  "keywords": [
+    "random",
+    "location",
+    "coordinates",
+    "radius",
+    "central",
+    "center",
+    "point"
+  ]
 }

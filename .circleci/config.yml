@@ -1,17 +1,31 @@
-version:
+version:2
+
+defaults:
+ working_directory: ~/repo
+ docker:
+   - image: circleci/node:latest
+     environment:
+       TZ: "Asia/Jerusalem"
+
 jobs:
-  build:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:8.10
-        environment:
-          TZ: "Asia/Jerusalem"
+  release:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+        name: release
+        command: npm run semantic-release || true
+  test:
+    <<: *defaults
     steps:
       - checkout # special step to check out source code to working directory
+
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
+
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
@@ -29,3 +43,15 @@ jobs:
       - run:
           name: test & coveralls
           command: yarn test --coverageReporters=text-lcov | yarn coveralls
+
+workflows:
+  version: 2
+  test-release:
+    jobs:
+      - test
+      - release:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
