@@ -2,7 +2,7 @@
 <html>
   <head><title>Random coordinates - within a circle, on a circumference</title></head>
   <body>
-    <script src="https://unpkg.com/random-location@1.0.12/dist/randomLocation.umd.min.js"></script>
+    <script src="https://unpkg.com/random-location/dist/randomLocation.umd.js"></script>
     <h3>Random coordinates - within a circle, on a circumference</h3>
     <div style="height: 400px; width: 400px" id="map"></div>
     <script>
@@ -22,17 +22,17 @@
       }
       const N = {
         latitude: P.latitude - 0.005,
-        longitude: P.longitude 
+        longitude: P.longitude
       }
       const C = {
         latitude: P.latitude - 0.001,
-        longitude: P.longitude 
+        longitude: P.longitude
       }
 
       function initMap() {
         let map = new google.maps.Map(document.getElementById('map'), {
           mapTypeId: google.maps.MapTypeId.ROADMAP,
-          scaleControl: false 
+          scaleControl: false
         });
         let bounds = new google.maps.LatLngBounds();
 
