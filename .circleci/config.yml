@@ -14,8 +14,8 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
-        name: release
-        command: npm run semantic-release || true
+          name: release
+          command: npm run semantic-release || true
   test:
     <<: *defaults
     steps:
