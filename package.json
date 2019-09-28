@@ -11,7 +11,8 @@
     "lint": "eslint ./src",
     "build": "npm-run-all --parallel build:*",
     "build:babel": "babel --ignore '**/*.test.js' src -d dist --verbose",
-    "build:webpack": "webpack --display-modules ./src -o dist/randomLocation.umd.js"
+    "build:webpack": "webpack --display-modules ./src -o dist/randomLocation.umd.js",
+    "prettier:ci": "prettier --list-different \"src/**/*.js\""
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
@@ -39,13 +40,5 @@
     "url": "https://github.com/rmrs/random-location/issues"
   },
   "homepage": "https://github.com/rmrs/random-location",
-  "keywords": [
-    "random",
-    "location",
-    "coordinates",
-    "radius",
-    "central",
-    "center",
-    "point"
-  ]
+  "keywords": ["random", "location", "coordinates", "radius", "central", "center", "point"]
 }
