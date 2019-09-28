@@ -46,7 +46,7 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths:
-            - *
+            - ./
 
 workflows:
   version: 2
