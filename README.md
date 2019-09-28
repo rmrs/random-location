@@ -60,7 +60,7 @@ Where:
 
 ### `randomLocation.randomCircumferencePoint(...)`
 
-Outputs a Point ( `{ latitude: ..., longitude: ... }`) of random coordinates within a circle.
+Outputs a Point ( `{ latitude: ..., longitude: ... }`) of random coordinates on a circle's circumference.
 
 Function definition:
 
@@ -78,6 +78,7 @@ Where:
 ## Usage
 
 ### Generating random coordinates within a circle
+
 Lets say we'd like to get a random location that its distance from
 [Twitter's HQ](https://www.google.co.il/maps/place/Twitter+HQ/@37.7768006,-122.4187928,17z/data=!3m1!4b1!4m5!3m4!1s0x8085809c6c8f4459:0xb10ed6d9b5050fa5!8m2!3d37.7767964!4d-122.4166041?hl=en)
 is **at most** `500` meters:
@@ -97,6 +98,7 @@ const randomPoint = randomLocation.randomCirclePoint(P, R)
 ```
 
 ### Generating random coordinates on a circle circumference
+
 Lets say we'd like to get a random location that its distance from
 [Twitter's HQ](https://www.google.co.il/maps/place/Twitter+HQ/@37.7768006,-122.4187928,17z/data=!3m1!4b1!4m5!3m4!1s0x8085809c6c8f4459:0xb10ed6d9b5050fa5!8m2!3d37.7767964!4d-122.4166041?hl=en)
 is **exactly** `700` meters:
@@ -136,15 +138,4 @@ console.log(Math.floor(randomLocation.distance(P1, P2)) === 4098)
 
 ## Hacking
 
-### Developing
-Verify tests and coverage:
-~~~
-$ npm run test
-$ npm run cover
-~~~
-
-### Publishing
-~~~
-$ npm run build
-$ npm publish
-~~~
+Clone. Install. Hack. Open a **PR**.
