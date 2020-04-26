@@ -45,7 +45,7 @@ jobs:
           command: yarn test
       - run:
           name: coveralls
-          command: yarn coveralls < ./coverage/lcov.json
+          command: yarn coveralls < ./coverage/lcov.info
 
       - persist_to_workspace:
           root: ~/repo
