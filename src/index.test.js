@@ -108,4 +108,65 @@ describe('random-location', () => {
       }
     });
   });
+
+  describe('random generation of random annulus points', () => {
+    test('innerRadius is larger than outerRadius', () => {
+      // Eiffel Tower
+      const P1 = {
+        latitude: 48.8583736,
+        longitude: 2.2922926,
+      };
+      const innerRadius = 1000; // meters
+      const outerRadius = 123;
+      expect(() =>
+        randomLocation.randomAnnulusPoint(P1, innerRadius, outerRadius)
+      ).toThrow(
+        `innerRadius (${innerRadius}) should be smaller than outerRadius (${outerRadius})`
+      );
+    });
+
+    test('on an annulus of two concentric circles', () => {
+      // Eiffel Tower
+      const P1 = {
+        latitude: 48.8583736,
+        longitude: 2.2922926,
+      };
+      const innerRadius = 1000; // meters
+      const outerRadius = 2000;
+
+      for (let i = 0; i < 100; i++) {
+        const randomPoint = randomLocation.randomAnnulusPoint(
+          P1,
+          innerRadius,
+          outerRadius
+        );
+        const distance = Math.floor(randomLocation.distance(P1, randomPoint));
+        expect(distance).toBeLessThanOrEqual(outerRadius);
+        expect(distance).toBeGreaterThanOrEqual(innerRadius);
+      }
+    });
+    test('on an annulus of two concentric circles; using seedrandom', () => {
+      // Eiffel Tower
+      const P1 = {
+        latitude: 48.8583736,
+        longitude: 2.2922926,
+      };
+      const innerRadius = 1000; // meters
+      const outerRadius = 2000;
+      const seed = 'this is another seed';
+      const randomFn = seedrandom(seed);
+
+      for (let i = 0; i < 100; i++) {
+        const randomPoint = randomLocation.randomAnnulusPoint(
+          P1,
+          innerRadius,
+          outerRadius,
+          randomFn
+        );
+        const distance = Math.floor(randomLocation.distance(P1, randomPoint));
+        expect(distance).toBeLessThanOrEqual(outerRadius);
+        expect(distance).toBeGreaterThanOrEqual(innerRadius);
+      }
+    });
+  });
 });

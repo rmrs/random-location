@@ -41,8 +41,12 @@ jobs:
           name: prettier
           command: yarn prettier:ci
       - run:
-          name: test & coveralls
-          command: yarn test --coverageReporters=text-lcov | yarn coveralls
+          name: jest
+          command: yarn test
+      - run:
+          name: codecov
+          command: yarn codecov
+
       - persist_to_workspace:
           root: ~/repo
           paths:

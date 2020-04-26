@@ -3,8 +3,8 @@ const DEG_TO_RAD = Math.PI / 180.0;
 const THREE_PI = Math.PI * 3;
 const TWO_PI = Math.PI * 2;
 
-const toRadians = deg => deg * DEG_TO_RAD;
-const toDegrees = rad => rad / DEG_TO_RAD;
+const toRadians = (deg) => deg * DEG_TO_RAD;
+const toDegrees = (rad) => rad / DEG_TO_RAD;
 
 /*
 Given a centerPoint C and a radius R, returns a random point that is on the
@@ -69,6 +69,38 @@ const randomCirclePoint = (centerPoint, radius, randomFn = Math.random) => {
   );
 };
 
+/**
+ * Returns a random point in a region bounded by two concentric circles (annulus).
+ *
+ * centerPoint - the center point of both circles.
+ * innerRadius - the radius of the smaller circle.
+ * outerRadius - the radius of the larger circle
+ * randomFn -  *optional* A random function. Output is >=0 and <=1. Allows
+ * usage of seeded random number generators - i.e. allows us to predict
+ * generated random coordiantes. default is Math.random()
+ *
+ */
+const randomAnnulusPoint = (
+  centerPoint,
+  innerRadius,
+  outerRadius,
+  randomFn = Math.random
+) => {
+  if (innerRadius >= outerRadius) {
+    throw new Error(
+      `innerRadius (${innerRadius}) should be smaller than outerRadius (${outerRadius})`
+    );
+  }
+
+  const deltaRadius = outerRadius - innerRadius;
+
+  return randomCircumferencePoint(
+    centerPoint,
+    innerRadius + Math.sqrt(randomFn()) * deltaRadius,
+    randomFn
+  );
+};
+
 /*
 Returns the distance in meters between two points P1 and P2.
 
@@ -109,4 +141,5 @@ module.exports = {
   haversine,
   randomCircumferencePoint,
   randomCirclePoint,
+  randomAnnulusPoint,
 };
