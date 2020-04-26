@@ -109,45 +109,63 @@ describe('random-location', () => {
     });
   });
 
-  describe('random generation of points between circles', () => {
-    test('between circles given center point and inner and outer radius', () => {
+  describe('random generation of random annulus points', () => {
+    test('innerRadius is larger than outerRadius', () => {
       // Eiffel Tower
       const P1 = {
         latitude: 48.8583736,
         longitude: 2.2922926,
       };
-      const R = 1000; // meters
-      const R2 = 2000;
-
-      for (let i = 0; i < 100; i++) {
-        const randomPoint = randomLocation.randomAnnulusPoint(P1, R, R2);
-        const distance = Math.floor(randomLocation.distance(P1, randomPoint));
-        expect(distance).toBeLessThanOrEqual(R2 + 1);
-        expect(distance).toBeGreaterThanOrEqual(R);
-      }
+      const innerRadius = 1000; // meters
+      const outerRadius = 123;
+      expect(() =>
+        randomLocation.randomAnnulusPoint(P1, innerRadius, outerRadius)
+      ).toThrow(
+        `innerRadius (${innerRadius}) should be smaller than outerRadius (${outerRadius})`
+      );
     });
 
-    test('between inner and outer circle given seed random', () => {
+    test('on an annulus of two concentric circles', () => {
       // Eiffel Tower
       const P1 = {
         latitude: 48.8583736,
         longitude: 2.2922926,
       };
-      const R = 1234; // meters
-      const R2 = 2300;
-      const seed = 'this is another seed';
+      const innerRadius = 1000; // meters
+      const outerRadius = 2000;
 
       for (let i = 0; i < 100; i++) {
-        const randomFn = seedrandom(seed);
         const randomPoint = randomLocation.randomAnnulusPoint(
           P1,
-          R,
-          R2,
+          innerRadius,
+          outerRadius
+        );
+        const distance = Math.floor(randomLocation.distance(P1, randomPoint));
+        expect(distance).toBeLessThanOrEqual(outerRadius);
+        expect(distance).toBeGreaterThanOrEqual(innerRadius);
+      }
+    });
+    test('on an annulus of two concentric circles; using seedrandom', () => {
+      // Eiffel Tower
+      const P1 = {
+        latitude: 48.8583736,
+        longitude: 2.2922926,
+      };
+      const innerRadius = 1000; // meters
+      const outerRadius = 2000;
+      const seed = 'this is another seed';
+      const randomFn = seedrandom(seed);
+
+      for (let i = 0; i < 100; i++) {
+        const randomPoint = randomLocation.randomAnnulusPoint(
+          P1,
+          innerRadius,
+          outerRadius,
           randomFn
         );
         const distance = Math.floor(randomLocation.distance(P1, randomPoint));
-        expect(distance).toBeLessThanOrEqual(R2 + 1);
-        expect(distance).toBeGreaterThanOrEqual(R);
+        expect(distance).toBeLessThanOrEqual(outerRadius);
+        expect(distance).toBeGreaterThanOrEqual(innerRadius);
       }
     });
   });

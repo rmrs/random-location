@@ -70,9 +70,15 @@ const randomCirclePoint = (centerPoint, radius, randomFn = Math.random) => {
 };
 
 /**
+ * Returns a random point in a region bounded by two concentric circles (annulus).
  *
- * Given a center point C and a smaller radius and bigger radius, return a point that is
- *  between the two circles
+ * centerPoint - the center point of both circles.
+ * innerRadius - the radius of the smaller circle.
+ * outerRadius - the radius of the larger circle
+ * randomFn -  *optional* A random function. Output is >=0 and <=1. Allows
+ * usage of seeded random number generators - i.e. allows us to predict
+ * generated random coordiantes. default is Math.random()
+ *
  */
 const randomAnnulusPoint = (
   centerPoint,
@@ -80,13 +86,17 @@ const randomAnnulusPoint = (
   outerRadius,
   randomFn = Math.random
 ) => {
-  if (innerRadius > outerRadius) {
-    throw new Error('innerRadus should be smaller');
+  if (innerRadius >= outerRadius) {
+    throw new Error(
+      `innerRadius (${innerRadius}) should be smaller than outerRadius (${outerRadius})`
+    );
   }
+
+  const deltaRadius = outerRadius - innerRadius;
 
   return randomCircumferencePoint(
     centerPoint,
-    Math.floor(Math.random() * (outerRadius - innerRadius + 1) + innerRadius),
+    innerRadius + Math.sqrt(randomFn()) * deltaRadius,
     randomFn
   );
 };

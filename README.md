@@ -74,6 +74,24 @@ Where:
 - **`radius`** *required* The distance (meters) from `centerPoint`.
 - **`randomFn`** *optional* A random function. Output is >=0 and <=1. Allows usage of seeded random number generators (see [`seedrandom`](https://www.npmjs.com/package/seedrandom)) - more predictability when testing.
 
+### `randomLocation.randomAnnulusPoint(...)`
+
+Outputs a Point ( `{ latitude: ..., longitude: ... }`) of random coordinates in a region bounded by two concentric circles (annulus).
+
+Function definition:
+
+```js
+const randomCircumferencePoint= (centerPoint, radius, randomFn = Math.random) => { ... }
+```
+
+Where:
+
+- **`centerPoint`** *required* An object with a `latitude` and `longitude` fields.
+- **`innerRadius`** *required* The readius of the smaller circle.
+- **`outerRadius`** *required* The readius of the larger circle.
+- **`randomFn`** *optional* A random function. Output is >=0 and <=1. Allows usage of seeded random number generators (see [`seedrandom`](https://www.npmjs.com/package/seedrandom)) - more predictability when testing.
+
+
 
 ## Usage
 
