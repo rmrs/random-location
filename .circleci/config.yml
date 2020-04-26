@@ -42,7 +42,7 @@ jobs:
           command: yarn prettier:ci
       - run:
           name: jest
-          command: yarn test &&  yarn coveralls
+          command: yarn test
       - run:
           name: coveralls
           command: yarn coveralls < ./coverage/lcov.json
