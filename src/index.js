@@ -69,6 +69,28 @@ const randomCirclePoint = (centerPoint, radius, randomFn = Math.random) => {
   );
 };
 
+/**
+ *
+ * Given a center point C and a smaller radius and bigger radius, return a point that is
+ *  between the two circles
+ */
+const randomAnnulusPoint = (
+  centerPoint,
+  innerRadius,
+  outerRadius,
+  randomFn = Math.random
+) => {
+  if (innerRadius > outerRadius) {
+    throw new Error('innerRadus should be smaller');
+  }
+
+  return randomCircumferencePoint(
+    centerPoint,
+    Math.floor(Math.random() * (outerRadius - innerRadius + 1) + innerRadius),
+    randomFn
+  );
+};
+
 /*
 Returns the distance in meters between two points P1 and P2.
 
@@ -109,4 +131,5 @@ module.exports = {
   haversine,
   randomCircumferencePoint,
   randomCirclePoint,
+  randomAnnulusPoint,
 };

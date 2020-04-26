@@ -108,4 +108,47 @@ describe('random-location', () => {
       }
     });
   });
+
+  describe('random generation of points between circles', () => {
+    test('between circles given center point and inner and outer radius', () => {
+      // Eiffel Tower
+      const P1 = {
+        latitude: 48.8583736,
+        longitude: 2.2922926,
+      };
+      const R = 1000; // meters
+      const R2 = 2000;
+
+      for (let i = 0; i < 100; i++) {
+        const randomPoint = randomLocation.randomAnnulusPoint(P1, R, R2);
+        const distance = Math.floor(randomLocation.distance(P1, randomPoint));
+        expect(distance).toBeLessThanOrEqual(R2 + 1);
+        expect(distance).toBeGreaterThanOrEqual(R);
+      }
+    });
+
+    test('between inner and outer circle given seed random', () => {
+      // Eiffel Tower
+      const P1 = {
+        latitude: 48.8583736,
+        longitude: 2.2922926,
+      };
+      const R = 1234; // meters
+      const R2 = 2300;
+      const seed = 'this is another seed';
+
+      for (let i = 0; i < 100; i++) {
+        const randomFn = seedrandom(seed);
+        const randomPoint = randomLocation.randomAnnulusPoint(
+          P1,
+          R,
+          R2,
+          randomFn
+        );
+        const distance = Math.floor(randomLocation.distance(P1, randomPoint));
+        expect(distance).toBeLessThanOrEqual(R2 + 1);
+        expect(distance).toBeGreaterThanOrEqual(R);
+      }
+    });
+  });
 });
