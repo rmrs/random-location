@@ -5,6 +5,7 @@
   "author": "Sagi Kedmi (https://sagi.io) <git@sagi.io>",
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest",
     "prebuild": "rimraf dist",
