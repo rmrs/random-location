@@ -81,7 +81,7 @@ Outputs a Point ( `{ latitude: ..., longitude: ... }`) of random coordinates in 
 Function definition:
 
 ```js
-const randomCircumferencePoint= (centerPoint, radius, randomFn = Math.random) => { ... }
+const randomAnnulusPoint = (centerPoint, innerRadius, outerRadius, randomFn = Math.random) => { ... }
 ```
 
 Where:
